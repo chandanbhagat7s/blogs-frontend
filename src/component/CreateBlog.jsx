@@ -14,6 +14,8 @@ export default function CreateBlog() {
     blogName: "",
     seenFrom: "",
     type: "",
+    description: "",
+    image: "",
   });
   console.log("INFORMATION", information);
   const options = [
@@ -83,17 +85,19 @@ export default function CreateBlog() {
 
     try {
       // validation
+      let fd = new FormData();
+      let obj = { ...information };
+      Object.entries(obj).map((el) => {
+        console.log("noe", el);
+        fd.append(el[0], el[1]);
+      });
+      fd.append("content", content);
 
-      const res = await axios.post(
-        "/api/v1/blogs/createBlog",
-        {
-          ...information,
-          content,
-        },
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.post("/api/v1/blogs/createBlog", fd, {
+        withCredentials: true,
+      });
+
+      console.log(res);
     } catch (error) {
       dispatch(
         openAlert({

@@ -5,7 +5,7 @@ export default function Mainout({ children }) {
   return (
     <>
       <Nav></Nav>
-      {children}
+      <div className="my-20">{children}</div>
       <Footer />
     </>
   );

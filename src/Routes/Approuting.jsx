@@ -5,6 +5,7 @@ import Landing from "../component/Landing";
 import Signin from "../component/Signin";
 import BlogtemplatesOuter from "../component/BlogtemplatesOuter";
 import CreateBlog from "../component/CreateBlog";
+import ReadBlogs from "../component/ReadBlogs";
 // import Signin from "../component/Signin";
 
 export default function Approuting() {
@@ -42,6 +43,14 @@ export default function Approuting() {
           element={
             <Mainout>
               <CreateBlog />
+            </Mainout>
+          }
+        ></Route>
+        <Route
+          path="/readBlogs"
+          element={
+            <Mainout>
+              <ReadBlogs />
             </Mainout>
           }
         ></Route>

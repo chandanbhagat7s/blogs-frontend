@@ -37,20 +37,38 @@ export default function TemplateCard() {
   return (
     <>
       <div className="flex flex-col space-y-5 bg-gradient-to-r from-blue-200 to-blue-100 pt-20 pb-10">
-        <div className="flex justify-between  mt-5 mb-20 px-10">
-          <h1 className="text-2xl font-bold text-blue-800">
-            CREATE YOUR CUSTOM BLOG
-          </h1>
+        <div className="flex justify-between  mt-5 mb-20 px-10 flex-col space-y-10">
+          <div className="space-y-5">
+            <h1 className="rounded p-2 bg-gradient-to-r from-cyan-300 to-blue-300 text-black text-2xl font-bold text-blue-800 shadow-lg shadow-cyan-500/50">
+              CREATE YOUR CUSTOM BLOG
+            </h1>
+            <div className="p-3 lg:text-xl md:text-xl text-sm  text-blue-800 bg-blue-200 rounded">
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <span className="text-3xl text-blue-900">C</span>rafting a
+              compelling blog involves brainstorming topics, writing engaging
+              content, adding visuals, optimizing for search engines, and
+              promoting across social platforms to attract and retain readership
+              effectively.
+            </div>
+          </div>
           <div>
-            <button className="px-3 py-2 rounded bg-black text-white">
+            <button className="px-3 py-2 rounded bg-black text-white animate-bounce">
               <Link to={"/createBlog"}>CREATE BLOG</Link>
             </button>
           </div>
         </div>
-        <div className="px-10 py-5">
-          <h1 className="text-2xl font-bold text-blue-800">
-            USE TEMPLATES TO CREATE A BLOG
-          </h1>
+        <div className="px-10 py-5 flex flex-col space-y-10">
+          <div className="space-y-5">
+            <h1 className="rounded px-3 py-3 bg-gradient-to-r from-cyan-300 to-blue-200 text-black text-2xl font-bold text-blue-800 shadow-lg shadow-cyan-500/50">
+              USE TEMPLATES TO CREATE A BLOG
+            </h1>
+            <div className="p-3 text-sm lg:text-xl md:text-xl text-blue-800 bg-blue-200">
+              Enhance your blog's appeal with our versatile templates. Craft
+              engaging content, incorporate visuals, and share across social
+              media to captivate and retain your audience effectively
+            </div>
+          </div>
+
           <div>
             <Card sx={{ maxWidth: 345 }}>
               <CardHeader

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { IoMdAdd } from "react-icons/io";
 
 export default function BlogSubmitionhtmlForm({
   options,
@@ -6,6 +7,12 @@ export default function BlogSubmitionhtmlForm({
   setInformation,
   handleSubmit,
 }) {
+  const [file, setFile] = useState();
+
+  function handleFileChange(e) {
+    setInformation({ ...information, image: e.target?.files[0] });
+  }
+
   return (
     <>
       <div className="w-2/2 lg:w-1/2 mx-auto py-5 bg-blue-300 rounded">
@@ -28,6 +35,25 @@ export default function BlogSubmitionhtmlForm({
               }
             />
           </div>
+
+          <div className="mb-5">
+            <label
+              htmlFor="desc"
+              className="block mb-2 text-sm font-medium text-gray-900  "
+            >
+              Enter Short description
+            </label>
+            <textarea
+              id="desc"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+              placeholder="Short description"
+              required
+              onChange={(e) =>
+                setInformation({ ...information, description: e.target.value })
+              }
+            />
+          </div>
+
           <div className="mb-5">
             <label
               htmlFor="password"
@@ -69,6 +95,25 @@ export default function BlogSubmitionhtmlForm({
                 );
               })}
             </select>
+          </div>
+
+          <div className="mb-5">
+            <label
+              htmlFor="file"
+              className="block mb-2 text-sm font-medium text-gray-900  "
+            >
+              Upload the cover page
+              <div className="  rounded py-3 px-5 ">
+                <IoMdAdd className="animate-bounce  border border-1 border-black text-6xl p-1 text-blue-700 " />
+              </div>
+            </label>
+
+            <input
+              type="file"
+              id="file"
+              className="hidden"
+              onChange={handleFileChange}
+            />
           </div>
 
           <button
